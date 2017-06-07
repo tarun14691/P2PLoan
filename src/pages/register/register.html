@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+  <div class="login-box">
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-label>Aadhaar No: </ion-label>
+              <ion-input type="text"  name="uid" [(ngModel)]="aadharInfo.uid" disabled="true"></ion-input>
+            </ion-item>
+
+           <ion-item>
+             <ion-label>Name: </ion-label>
+              <ion-input type="text"  name="name" [(ngModel)]="aadharInfo.name" disabled="true"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Gender: </ion-label>
+              <ion-input type="text" placeholder="gender" name="gender" [(ngModel)]="aadharInfo.gender" disabled="true"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>District: </ion-label>
+              <ion-input type="text"  name="dist" [(ngModel)]="aadharInfo.dist" disabled="true"></ion-input>
+            </ion-item>
+
+
+
+            <ion-item>
+              <ion-label>Email: </ion-label>
+              <ion-input type="text"  name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-label>Password: </ion-label>
+              <ion-input type="password"  name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content>
